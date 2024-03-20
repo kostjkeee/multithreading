@@ -14,7 +14,8 @@ class ViewControllerTask2_5: UIViewController {
         print(2)
         DispatchQueue.main.async {
             print(3)
-            DispatchQueue.main.sync {
+            // во избежание дедлока меняем sync на async
+            DispatchQueue.main.async {
                 print(5)
             }
             print(4)
@@ -28,4 +29,5 @@ let vc = ViewControllerTask2_5()
 let view = vc.view
 //print(7)
 
+// 1 2 6 7 3 4 5
 // viewDidLoad вызвался так как вью по умолчанию является lazy var, и при обращении к нему через обьект класса, мы инициализируем его вместе через методы жизненного цикла
