@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Task2_6: UIViewController {
+class ViewControllerTask2_6: UIViewController {
 
     var lock = NSLock()
     
